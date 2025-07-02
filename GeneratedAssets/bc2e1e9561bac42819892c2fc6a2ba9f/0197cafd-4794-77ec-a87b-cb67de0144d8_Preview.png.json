@@ -1,0 +1,11 @@
+{
+    "asset": "bc2e1e9561bac42819892c2fc6a2ba9f",
+    "fileName": "0197cafd-4794-77ec-a87b-cb67de0144d8_Preview.png",
+    "prompt": "asphalt street",
+    "negativePrompt": "",
+    "model": "575ecf67-4425-4939-97b9-5e138b8ee234",
+    "modelName": "Unity Texture2D",
+    "customSeed": 1422390378,
+    "w3CTraceId": "ea34f1d39cb3c8dff629b6a1de1bc237",
+    "refinementMode": "Generation"
+}

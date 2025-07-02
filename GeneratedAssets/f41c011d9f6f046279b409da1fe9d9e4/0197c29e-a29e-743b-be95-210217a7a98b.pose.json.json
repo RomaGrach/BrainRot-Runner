@@ -1,0 +1,10 @@
+{
+    "asset": "f41c011d9f6f046279b409da1fe9d9e4",
+    "fileName": "0197c29e-a29e-743b-be95-210217a7a98b.pose.json",
+    "prompt": "Running without start or end, looped",
+    "negativePrompt": "",
+    "model": "a9c27ca4-3ec9-43e8-96cd-ee891aba64c5",
+    "modelName": "Text to Motion",
+    "customSeed": 1220541906,
+    "w3CTraceId": "d31f319ef87592fa1385406f759f7a48"
+}

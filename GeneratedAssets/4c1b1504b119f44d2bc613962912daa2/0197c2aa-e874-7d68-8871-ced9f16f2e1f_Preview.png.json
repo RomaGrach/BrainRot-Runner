@@ -1,0 +1,11 @@
+{
+    "asset": "d43af25b9fa7246258e3ac28c651e0c4",
+    "fileName": "0197c2aa-e874-7d68-8871-ced9f16f2e1f_Preview.png",
+    "prompt": "простая площадка для тестирования героя, на которой можно бегать туда-сюда",
+    "negativePrompt": "",
+    "model": "575ecf67-4425-4939-97b9-5e138b8ee234",
+    "modelName": "Unity Texture2D",
+    "customSeed": 851955461,
+    "w3CTraceId": "ec249c855dfac57f8557d722e381da34",
+    "refinementMode": "Generation"
+}

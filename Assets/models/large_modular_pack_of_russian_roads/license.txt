@@ -1,0 +1,11 @@
+Model Information:
+* title:	Large modular pack of Russian roads
+* source:	https://sketchfab.com/3d-models/large-modular-pack-of-russian-roads-9fd19243e4fe4ddaaa627551477a9e27
+* author:	Unka II (https://sketchfab.com/UnkaII)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Large modular pack of Russian roads" (https://sketchfab.com/3d-models/large-modular-pack-of-russian-roads-9fd19243e4fe4ddaaa627551477a9e27) by Unka II (https://sketchfab.com/UnkaII) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

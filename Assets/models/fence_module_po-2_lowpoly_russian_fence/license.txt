@@ -1,0 +1,11 @@
+Model Information:
+* title:	fence module PO-2 lowpoly (russian fence)
+* source:	https://sketchfab.com/3d-models/fence-module-po-2-lowpoly-russian-fence-a5cedd5926aa4de0a366dc7d5f920631
+* author:	Roman (https://sketchfab.com/fedorenko.rf)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "fence module PO-2 lowpoly (russian fence)" (https://sketchfab.com/3d-models/fence-module-po-2-lowpoly-russian-fence-a5cedd5926aa4de0a366dc7d5f920631) by Roman (https://sketchfab.com/fedorenko.rf) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

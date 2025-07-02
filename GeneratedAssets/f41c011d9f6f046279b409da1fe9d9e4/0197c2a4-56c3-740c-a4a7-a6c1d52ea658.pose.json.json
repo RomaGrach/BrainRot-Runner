@@ -1,0 +1,10 @@
+{
+    "asset": "f41c011d9f6f046279b409da1fe9d9e4",
+    "fileName": "0197c2a4-56c3-740c-a4a7-a6c1d52ea658.pose.json",
+    "prompt": "a quick left hand strike with a stick horizontally from left to right in one second",
+    "negativePrompt": "",
+    "model": "a9c27ca4-3ec9-43e8-96cd-ee891aba64c5",
+    "modelName": "Text to Motion",
+    "customSeed": 563980740,
+    "w3CTraceId": "f5e08583de899680606c839086a1089a"
+}

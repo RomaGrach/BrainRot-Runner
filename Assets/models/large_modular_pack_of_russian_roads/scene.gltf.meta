@@ -1,0 +1,88 @@
+fileFormatVersion: 2
+guid: 9c16f907110024f2b8f09db189b8749b
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 715df9372183c47e389bb6e19fbc3b52, type: 3}
+  editorImportSettings:
+    generateSecondaryUVSet: 0
+  importSettings:
+    nodeNameMethod: 1
+    animationMethod: 2
+    generateMipMaps: 1
+    texturesReadable: 0
+    defaultMinFilterMode: 9729
+    defaultMagFilterMode: 9729
+    anisotropicFilterLevel: 1
+  instantiationSettings:
+    mask: -1
+    layer: 0
+    skinUpdateWhenOffscreen: 1
+    lightIntensityFactor: 1
+    sceneObjectCreation: 2
+  assetDependencies:
+  - type: 0
+    originalUri: Assets/models/large_modular_pack_of_russian_roads/scene.bin
+    assetPath: Assets/models/large_modular_pack_of_russian_roads/scene.bin
+  - type: 1
+    originalUri: Assets/models/large_modular_pack_of_russian_roads/textures/Road_baseColor.png
+    assetPath: Assets/models/large_modular_pack_of_russian_roads/textures/Road_baseColor.png
+  - type: 1
+    originalUri: Assets/models/large_modular_pack_of_russian_roads/textures/Road_normal.png
+    assetPath: Assets/models/large_modular_pack_of_russian_roads/textures/Road_normal.png
+  - type: 1
+    originalUri: Assets/models/large_modular_pack_of_russian_roads/textures/bord_baseColor.png
+    assetPath: Assets/models/large_modular_pack_of_russian_roads/textures/bord_baseColor.png
+  - type: 1
+    originalUri: Assets/models/large_modular_pack_of_russian_roads/textures/bord_normal.png
+    assetPath: Assets/models/large_modular_pack_of_russian_roads/textures/bord_normal.png
+  - type: 1
+    originalUri: Assets/models/large_modular_pack_of_russian_roads/textures/grass_baseColor.png
+    assetPath: Assets/models/large_modular_pack_of_russian_roads/textures/grass_baseColor.png
+  - type: 1
+    originalUri: Assets/models/large_modular_pack_of_russian_roads/textures/grass_normal.png
+    assetPath: Assets/models/large_modular_pack_of_russian_roads/textures/grass_normal.png
+  - type: 1
+    originalUri: Assets/models/large_modular_pack_of_russian_roads/textures/material_baseColor.png
+    assetPath: Assets/models/large_modular_pack_of_russian_roads/textures/material_baseColor.png
+  - type: 1
+    originalUri: Assets/models/large_modular_pack_of_russian_roads/textures/material_normal.png
+    assetPath: Assets/models/large_modular_pack_of_russian_roads/textures/material_normal.png
+  - type: 1
+    originalUri: Assets/models/large_modular_pack_of_russian_roads/textures/sever_baseColor.png
+    assetPath: Assets/models/large_modular_pack_of_russian_roads/textures/sever_baseColor.png
+  - type: 1
+    originalUri: Assets/models/large_modular_pack_of_russian_roads/textures/sever_normal.png
+    assetPath: Assets/models/large_modular_pack_of_russian_roads/textures/sever_normal.png
+  - type: 1
+    originalUri: Assets/models/large_modular_pack_of_russian_roads/textures/Road1_baseColor.png
+    assetPath: Assets/models/large_modular_pack_of_russian_roads/textures/Road1_baseColor.png
+  - type: 1
+    originalUri: Assets/models/large_modular_pack_of_russian_roads/textures/Road3_baseColor.png
+    assetPath: Assets/models/large_modular_pack_of_russian_roads/textures/Road3_baseColor.png
+  - type: 1
+    originalUri: Assets/models/large_modular_pack_of_russian_roads/textures/decal1_baseColor.png
+    assetPath: Assets/models/large_modular_pack_of_russian_roads/textures/decal1_baseColor.png
+  - type: 1
+    originalUri: Assets/models/large_modular_pack_of_russian_roads/textures/material_8_baseColor.png
+    assetPath: Assets/models/large_modular_pack_of_russian_roads/textures/material_8_baseColor.png
+  - type: 1
+    originalUri: Assets/models/large_modular_pack_of_russian_roads/textures/Road2x_baseColor.png
+    assetPath: Assets/models/large_modular_pack_of_russian_roads/textures/Road2x_baseColor.png
+  - type: 1
+    originalUri: Assets/models/large_modular_pack_of_russian_roads/textures/Road2x2_baseColor.png
+    assetPath: Assets/models/large_modular_pack_of_russian_roads/textures/Road2x2_baseColor.png
+  - type: 1
+    originalUri: Assets/models/large_modular_pack_of_russian_roads/textures/Road2x2_normal.png
+    assetPath: Assets/models/large_modular_pack_of_russian_roads/textures/Road2x2_normal.png
+  - type: 1
+    originalUri: Assets/models/large_modular_pack_of_russian_roads/textures/RoadYard_baseColor.png
+    assetPath: Assets/models/large_modular_pack_of_russian_roads/textures/RoadYard_baseColor.png
+  - type: 1
+    originalUri: Assets/models/large_modular_pack_of_russian_roads/textures/RoadYard_normal.png
+    assetPath: Assets/models/large_modular_pack_of_russian_roads/textures/RoadYard_normal.png
+  reportItems: []

@@ -1,0 +1,350 @@
+fileFormatVersion: 2
+guid: 13217db2e3c8f45c28548167e9e12396
+ModelImporter:
+  serializedVersion: 24200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 1.m.onetex
+    second: {fileID: 2100000, guid: 32f970a70d86144a29416ef6be865b5f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: budka_t2.m.onetex
+    second: {fileID: 2100000, guid: 81a1a075fd01e4fa5b543a0b110e5137, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: budka_t2.m.onetex1
+    second: {fileID: 2100000, guid: a5453bdbcd7734a0683afd1cc27b2e93, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: des_tex01.m.onetex.005
+    second: {fileID: 2100000, guid: 309d93700b7c94d089993e34fed4ef75, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: des_tex01.m.onetex_blue
+    second: {fileID: 2100000, guid: 2633be903e37c4080bade3996a7e43aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: des_tex01.m.onetex_green
+    second: {fileID: 2100000, guid: 4b9144aa594b64c4ca86365001b3e528, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: des_tex01.m.onetex_red
+    second: {fileID: 2100000, guid: b7c56bfe715e84be3a0523e8b3910160, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: k_body01.m.onetex
+    second: {fileID: 2100000, guid: 0b6cca121abb548b8bf6f3fc110086fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: k_body01.m.onetex.001
+    second: {fileID: 2100000, guid: 3c72e38815972480eb42bc856b2c5c9b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: k_body01.m.onetex.002
+    second: {fileID: 2100000, guid: 566a68e295fe840e9b4d8300c054e8be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: k_body01.m.onetex.003
+    second: {fileID: 2100000, guid: 8813ecc85073e4019a095b2ff542dc47, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: k_body01.m.onetex.004
+    second: {fileID: 2100000, guid: cbe38897dd14649d3ad8bdeb56a59b69, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: k_body01.m.onetex.005
+    second: {fileID: 2100000, guid: 5f7c94d8a17f748c487e6cdd3e66ea3a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: k_body01.m.onetex_basic
+    second: {fileID: 2100000, guid: d8dded05b9b364963b3b5cd8a810e231, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: k_body01.m.onetex_blue
+    second: {fileID: 2100000, guid: ce55e37fa9c9e4d908f97d3d69155a0e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: k_body02.m.onetex
+    second: {fileID: 2100000, guid: 436496d432ec245aa827c0ae91f8d274, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: k_body02.m.onetex.001
+    second: {fileID: 2100000, guid: 6bbc3486c8d37475a8b3634084ab3e87, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: k_body02.m.onetex.002
+    second: {fileID: 2100000, guid: d8b23f078d9f64915ac31668c1b55d67, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: k_body02.m.onetex.003
+    second: {fileID: 2100000, guid: 5b3e880829b5647c4b004c9be1cfeb34, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: k_body02.m.onetex.004
+    second: {fileID: 2100000, guid: e903a2e2e9df548f1b4f97630c00a86c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: k_body03.m.onetex
+    second: {fileID: 2100000, guid: e537e482566a44e168cbda9b667237c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: k_building01.m.onetex
+    second: {fileID: 2100000, guid: f786b12f4a7674e68bb515b2cc1f29f5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: k_building02.m.onetex
+    second: {fileID: 2100000, guid: e931b3efbba284d328fcbed9fd4695d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: k_house01.m.onetex.002
+    second: {fileID: 2100000, guid: f18e7f62b9ed1444a82a109c0afb98ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: k_house02.m.onetex.002
+    second: {fileID: 2100000, guid: f51557d40c4ae452ea432c18d902d1d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: l_body01.m.onetex.001
+    second: {fileID: 2100000, guid: 92798bf48265f4d8f8b6a928942b0dfe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: p_text01.m.onetex.003
+    second: {fileID: 2100000, guid: aaccdf136c6a5498d89eb0b2a6e063b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sr_house_2-floors_01.m.onetex.001
+    second: {fileID: 2100000, guid: 3f09b91de718047198f13e916d2b67f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sr_house_2-floors_01.m.onetex.002
+    second: {fileID: 2100000, guid: 62263466f75504fcb938b217a681e703, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sr_house_5-floors_01.m.onetex.001
+    second: {fileID: 2100000, guid: f910c7fc5852140daa06591492b7419c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sr_house_5-floors_03.m.onetex.001
+    second: {fileID: 2100000, guid: 34845e18897704126a3a4b7cd260278d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sr_house_9-floors_02.m.onetex.001
+    second: {fileID: 2100000, guid: d1ae970443d64488ca64b6391899c420, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sr_house_9-floors_03.m.onetex.001
+    second: {fileID: 2100000, guid: 177ad2e6b350e45c4b801db31bb5cead, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sr_house_9-floors_03.m.onetex.002
+    second: {fileID: 2100000, guid: 974e5fcbb300140b2a2bfee4171cfb3e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sr_house_9-floors_03.m.onetex.003
+    second: {fileID: 2100000, guid: e85134d688cda40fd8a1bb20dab2676f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sr_house_9-floors_03.m.onetex.004
+    second: {fileID: 2100000, guid: 5082c0279f5f040f9ada26dc62f3053e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sr_house_9-floors_07.m.onetex.001
+    second: {fileID: 2100000, guid: 149b25efadbe441ae91e241c67590100, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sr_house_9-floors_07.m.onetex.002
+    second: {fileID: 2100000, guid: 63e2ee9a8475c489e97fa85256fb01f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sr_house_9-floors_07.m.onetex.003
+    second: {fileID: 2100000, guid: 68723705983a64701b3019529fb00b57, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sr_house_9-floors_07.m.onetex.005
+    second: {fileID: 2100000, guid: ef8b5768cb9dd4dd5bae617da7a1bbb7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sr_kiosk.m.onetex
+    second: {fileID: 2100000, guid: ba71fc7de1c754692b9adf8cb7a9df3e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sr_kiosk_-_5.m.onetex
+    second: {fileID: 2100000, guid: c958c90ff3fa94d43a585f4433044539, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sr_kiosk_10.m.onetex
+    second: {fileID: 2100000, guid: 85c85c0c884f443258052bb7ef90d556, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sr_monument_order_lenin.m.onetex
+    second: {fileID: 2100000, guid: 11db72e3544de4498b0b41a0af3555c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sr_shop.m.onetex
+    second: {fileID: 2100000, guid: a413ebd12251145d2adb2ff93875938d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: standard_1m.onetex-green
+    second: {fileID: 2100000, guid: 055a7e4af949b4679bc2289fd100dc6d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: standard_1m.onetex-red
+    second: {fileID: 2100000, guid: 1f16162c5ae194816a4898122789321f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: standard_1m.onetex-yellow
+    second: {fileID: 2100000, guid: 34d2dc0e90b774866b91198cc29dc6f5, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

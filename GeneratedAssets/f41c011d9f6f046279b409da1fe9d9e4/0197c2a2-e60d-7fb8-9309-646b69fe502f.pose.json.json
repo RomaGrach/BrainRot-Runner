@@ -1,0 +1,10 @@
+{
+    "asset": "f41c011d9f6f046279b409da1fe9d9e4",
+    "fileName": "0197c2a2-e60d-7fb8-9309-646b69fe502f.pose.json",
+    "prompt": "strike with a stick",
+    "negativePrompt": "",
+    "model": "a9c27ca4-3ec9-43e8-96cd-ee891aba64c5",
+    "modelName": "Text to Motion",
+    "customSeed": 2000935736,
+    "w3CTraceId": "51c869fcac228e8dba6ba4e76bd7efac"
+}

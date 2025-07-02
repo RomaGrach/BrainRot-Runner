@@ -1,0 +1,10 @@
+{
+    "asset": "f41c011d9f6f046279b409da1fe9d9e4",
+    "fileName": "0197c295-a748-76d7-838a-ea1ad8709b7e.pose.json",
+    "prompt": "Generate a seamless, looping in-place run cycle for a humanoid character. The animation should show a natural running gait—alternating high knee lifts, heel-toe foot rolls, balanced weight shifts, and synchronized arm swings—while the character’s root remains fixed at the origin (no forward translation). Ensure the start and end poses match exactly for smooth looping. Keep the torso slightly leaned forward with a neutral head and gaze, at a moderate pace (roughly 2 m/s cadence). Total length: one full stride cycle (e.g. 30 frames at 30 fps).",
+    "negativePrompt": "",
+    "model": "a9c27ca4-3ec9-43e8-96cd-ee891aba64c5",
+    "modelName": "Text to Motion",
+    "customSeed": 731451189,
+    "w3CTraceId": "9c4cd13018b79a82936fe1a130e8b823"
+}
