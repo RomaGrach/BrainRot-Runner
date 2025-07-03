@@ -334,7 +334,14 @@ MonoBehaviour:
   playerTransform: {fileID: 1348027562}
   runningCollider: {fileID: 240370249}
   slidingCollider: {fileID: 240370248}
-  forwardSpeed: 5
+  forwardSpeed: 3
+  initialTimeScale: 1
+  timeAccelerationRate: 0.01
+  maxTimeScale: 3
+  currentTimeScale: 0
+  baseSpeed: 5
+  barrierTag: barrier
+  barrierHitMessage: Hit barrier!
   lateralSpeed: 3
   leftLaneX: -0.5
   rightLaneX: 0.5
@@ -1097,7 +1104,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2648689580299270539, guid: b40f3f4dd52734903a55367cbb722c73, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.41
       objectReference: {fileID: 0}
     - target: {fileID: 2648689580299270539, guid: b40f3f4dd52734903a55367cbb722c73, type: 3}
       propertyPath: m_LocalRotation.w
