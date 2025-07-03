@@ -1,0 +1,12 @@
+# Blender 4.4.3 MTL File: 'None'
+# www.blender.org
+
+newmtl tripo_mat_ebf1d689-b3e8-4e21-b129-a63edfb2b427
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd tripo_node_53648f82-7d92-4923-bbcf-bf92c1476ae4_BaseColor.jpg

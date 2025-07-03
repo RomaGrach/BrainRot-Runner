@@ -1,0 +1,10 @@
+{
+    "asset": "6d4edc7583d0445a4992f6be9f5a2b17",
+    "fileName": "0197ccba-8691-7979-820a-9c29541f2976.pose.json",
+    "prompt": "raise both hands during making big jump to forward",
+    "negativePrompt": "",
+    "model": "a9c27ca4-3ec9-43e8-96cd-ee891aba64c5",
+    "modelName": "Text to Motion",
+    "customSeed": 1805619386,
+    "w3CTraceId": "66949159f5f7bbca1e431c9b89fc57be"
+}

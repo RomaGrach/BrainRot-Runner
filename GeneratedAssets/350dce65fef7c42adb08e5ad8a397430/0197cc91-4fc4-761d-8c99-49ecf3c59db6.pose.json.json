@@ -1,0 +1,10 @@
+{
+    "asset": "6d4edc7583d0445a4992f6be9f5a2b17",
+    "fileName": "0197cc91-4fc4-761d-8c99-49ecf3c59db6.pose.json",
+    "prompt": "A feral, unrelenting burst of movement. The figure stomps the ground with violent precision, arms flinging outward and inward in sharp, angular slices like a malfunctioning machine stuck in an infinite rave loop. The torso twists and locks with rhythmic convulsions, each shoulder snapping forward and back in rapid succession. Legs pound the floor with piston-like aggression, knees jabbing upward, alternating in a relentless stomp-swing motion. The head jerks side to side, then freezes, then trembles—eyes locked forward like a possessed puppet. A full-body tremor pulses through every joint, and then the cycle resets. Arms rotate like gears, wrists snapping as if resisting torque. Shoulders pulse to a phantom kick drum, hips rotate in mechanical increments, locking and unlocking with ruthless tempo. There's no grace—only force. It's industrial. It's chaotic. It's hypnotic. It's a brutal loop, void of hesitation, perfect for an eternal, syncopated breakdown that never releases. This dance is war.",
+    "negativePrompt": "",
+    "model": "a9c27ca4-3ec9-43e8-96cd-ee891aba64c5",
+    "modelName": "Text to Motion",
+    "customSeed": 768235949,
+    "w3CTraceId": "e59a30d3eb2589dde4da695550529ae1"
+}

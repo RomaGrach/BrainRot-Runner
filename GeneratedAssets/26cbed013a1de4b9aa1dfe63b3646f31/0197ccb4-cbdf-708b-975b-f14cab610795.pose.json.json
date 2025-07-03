@@ -1,0 +1,10 @@
+{
+    "asset": "6d4edc7583d0445a4992f6be9f5a2b17",
+    "fileName": "0197ccb4-cbdf-708b-975b-f14cab610795.pose.json",
+    "prompt": " jump to forward with hand up",
+    "negativePrompt": "",
+    "model": "a9c27ca4-3ec9-43e8-96cd-ee891aba64c5",
+    "modelName": "Text to Motion",
+    "customSeed": 466018914,
+    "w3CTraceId": "cecd4629f4856726b830f6acc3ccca70"
+}
