@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+
+    public ScoreManager ScoreManager;
+
     [Header("References")]
     [Tooltip("Transform визуальной модели (используется только для поворота/наклона).")]
     public Transform playerTransform;
@@ -11,6 +14,16 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Коллайдер, активный во время слайда (dash).")]
     public Collider slidingCollider;
 
+    [Header("Health")]
+    [Tooltip("Максимальное здоровье игрока.")]
+    public int maxHealth = 3;
+    [Tooltip("Текущее здоровье игрока (для отображения).")]
+    public int currentHealth;
+    [Tooltip("Урон при столкновении с препятствием.")]
+    public int damageOnHit = 1;
+    [Tooltip("Имя триггера для анимации смерти.")]
+    public string deathTrigger = "Death";
+
     [Header("Forward Movement")]
     [Tooltip("Скорость движения вперёд (единиц в секунду).")]
     public float forwardSpeed = 5f;
@@ -18,41 +31,37 @@ public class PlayerController : MonoBehaviour
     [Header("Time Acceleration")]
     [Tooltip("Начальный множитель времени (Time.timeScale).")]
     public float initialTimeScale = 1f;
-    [Tooltip("Скорость, с которой ускоряется время (единиц timeScale в секунду).")]
+    [Tooltip("Скорость ускорения времени (единиц timeScale в секунду).")]
     public float timeAccelerationRate = 0.1f;
     [Tooltip("Максимальный множитель времени.")]
     public float maxTimeScale = 3f;
     [Tooltip("Текущий множитель времени (для отображения в инспекторе).")]
     public float currentTimeScale;
 
-    [Header("Speed Acceleration (disabled)")]
-    [Tooltip("—")]
-    public float baseSpeed = 5f; // оставлено для сброса скорости при необходимости
-
     [Header("Obstacle Handling")]
-    [Tooltip("Tag препятствий (на них должен стоять BoxCollider с isTrigger).")]
+    [Tooltip("Тег препятствий (BoxCollider с isTrigger).")]
     public string barrierTag = "Barrier";
     [Tooltip("Сообщение при попадании в консоль.")]
     public string barrierHitMessage = "Hit barrier!";
 
     [Header("Lateral Movement")]
-    [Tooltip("Скорость смены дорожки влево/вправо (единиц в секунду).")]
+    [Tooltip("Скорость смены дорожки (единиц/с).")]
     public float lateralSpeed = 10f;
-    [Tooltip("Смещение по X для левой дорожки.")]
+    [Tooltip("Смещение X для левой дорожки.")]
     public float leftLaneX = -2f;
-    [Tooltip("Смещение по X для правой дорожки.")]
+    [Tooltip("Смещение X для правой дорожки.")]
     public float rightLaneX = 2f;
 
     [Header("Turn/Yaw Settings")]
-    [Tooltip("Максимальный угол наклона (градусов) при смене дорожки.")]
+    [Tooltip("Макс. угол наклона при смене дорожки.")]
     public float yawAngle = 30f;
-    [Tooltip("Скорость поворота модели (градусов в секунду).")]
+    [Tooltip("Скорость поворота модели (град/с).")]
     public float yawSpeed = 300f;
-    [Tooltip("Скорость возврата модели в прямое положение (градусов в секунду).")]
+    [Tooltip("Скорость возврата в прямое положение (град/с).")]
     public float returnYawSpeed = 120f;
 
     [Header("Swipe Settings")]
-    [Tooltip("Разрешить свайпы для смены дорожек.")]
+    [Tooltip("Разрешить свайпы.")]
     public bool enableSwipe = true;
     [Range(0.05f, 0.5f)]
     [Tooltip("Доля экрана для распознавания свайпа.")]
@@ -74,7 +83,7 @@ public class PlayerController : MonoBehaviour
     public Vector3 groundCheckOffset = new Vector3(0f, 0.1f, 0f);
 
     [Header("Collider Timing")]
-    [Tooltip("Сколько секунд активен коллайдер для слайда.")]
+    [Tooltip("Сколько сек. активен коллайдер для слайда.")]
     public float slidingColliderDuration = 1f;
     [Tooltip("Задержка перед реактивацией бегового коллайдера.")]
     public float runningColliderReactivateDelay = 0f;
@@ -83,24 +92,22 @@ public class PlayerController : MonoBehaviour
     public bool inspectorIsGrounded;
     public float inspectorGroundDistance;
 
-    // Внутренние
+    // внутренние поля
     private Vector3[] laneOffsets;
     private int currentLane = 1;
     private float targetYaw = 0f;
-
     private bool isSwiping = false;
     private Vector2 swipeStart;
-    private float swipeThresholdX;
-    private float swipeThresholdY;
-
+    private float swipeThresholdX, swipeThresholdY;
     private float verticalVelocity = 0f;
     private bool isGrounded = false, wasGrounded = false;
     private float lastJumpTime = -Mathf.Infinity;
     private Coroutine colliderSwitchRoutine;
+    private bool isDead = false;
 
     void Start()
     {
-        // Инициализируем дорожки
+        // дорожки
         laneOffsets = new Vector3[3]
         {
             new Vector3(leftLaneX, 0f, 0f),
@@ -108,40 +115,39 @@ public class PlayerController : MonoBehaviour
             new Vector3(rightLaneX, 0f, 0f)
         };
 
-        // Настраиваем пороги свайпа
+        // thresholds свайпа
         swipeThresholdX = Screen.width * swipeThresholdFraction;
         swipeThresholdY = Screen.height * swipeThresholdFraction;
 
-        // Проверяем ссылки
+        // проверяем ссылки
         if (playerTransform == null) Debug.LogError("Assign playerTransform in inspector.");
         if (animator == null) Debug.LogError("Assign animator in inspector.");
         if (runningCollider == null) Debug.LogError("Assign runningCollider in inspector.");
         if (slidingCollider == null) Debug.LogError("Assign slidingCollider in inspector.");
 
-        // Начальные коллайдеры
+        // инициализация
         runningCollider.enabled = true;
         slidingCollider.enabled = false;
+        currentHealth = maxHealth;
 
-        // Инициализируем timeScale
         Time.timeScale = initialTimeScale;
         currentTimeScale = Time.timeScale;
-
-        // Сохраняем базовую скорость
-        baseSpeed = forwardSpeed;
     }
 
     void Update()
     {
+        if (isDead) return;
+
         HandleInput();
         CheckGround();
         ApplyVerticalMovement();
 
-        AccelerateTime();   // ускоряем внутриигровое время
+        AccelerateTime();
         MoveForward();
         MoveLateral();
         ApplyYaw();
 
-        // Отладочный луч
+        // отладочный луч
         Vector3 origin = transform.position + groundCheckOffset;
         Debug.DrawRay(origin, Vector3.down * inspectorGroundDistance,
                       isGrounded ? Color.green : Color.red);
@@ -242,7 +248,6 @@ public class PlayerController : MonoBehaviour
 
     private void AccelerateTime()
     {
-        // Увеличиваем Time.timeScale по unscaledDeltaTime
         Time.timeScale += timeAccelerationRate * Time.unscaledDeltaTime;
         Time.timeScale = Mathf.Min(Time.timeScale, maxTimeScale);
         currentTimeScale = Time.timeScale;
@@ -298,11 +303,34 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (isDead) return;
+        Debug.Log(other.tag);
+        ScoreManager.OnTriggerEnter(other);
+
         if (other.CompareTag(barrierTag))
         {
-            Debug.Log(barrierHitMessage + " (" + other.name + ")");
+            currentHealth -= damageOnHit;
+            Debug.Log($"{barrierHitMessage} ({other.name}). Health: {currentHealth}/{maxHealth}");
+
             Time.timeScale = initialTimeScale;
             currentTimeScale = Time.timeScale;
+
+            if (currentHealth <= 0)
+                HandleDeath();
         }
+    }
+
+    private void HandleDeath()
+    {
+        isDead = true;
+        animator.SetTrigger(deathTrigger);
+        // Вернуть время на нормальный масштаб
+        Time.timeScale = initialTimeScale;
+        currentTimeScale = Time.timeScale;
+        // Отключаем все коллайдеры, чтобы не было дальнейших столкновений
+        runningCollider.enabled = false;
+        slidingCollider.enabled = false;
+
+        ScoreManager.StopGame();
     }
 }

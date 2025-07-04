@@ -6,6 +6,7 @@ TagManager:
   tags:
   - nextPoint
   - barrier
+  - coin
   layers:
   - Default
   - TransparentFX
