@@ -1,0 +1,13 @@
+{
+    "coins": 27,
+    "MaxScore": 2272,
+    "intExample": 5,
+    "strExample": "Hello!",
+    "boolExample": [
+        false,
+        false,
+        false,
+        false
+    ],
+    "idSave": 7
+}

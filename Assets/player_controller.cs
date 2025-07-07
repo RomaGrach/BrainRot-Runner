@@ -142,6 +142,7 @@ public class PlayerController : MonoBehaviour
         animator.ResetTrigger(jumpTrigger);
         animator.ResetTrigger(dashTrigger);
         animator.ResetTrigger(runTrigger);
+        animator.SetTrigger("dance");
     }
 
     /// <summary>
@@ -149,6 +150,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     public void StartGame()
     {
+        animator.ResetTrigger("dance");
         if (isGameStarted || isDead) return;
         isGameStarted = true;
         animator.SetTrigger(runTrigger);

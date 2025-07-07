@@ -1,4 +1,17 @@
+using TMPro;
 using UnityEngine;
+
+
+namespace YG
+{
+    public partial class SavesYG
+    {
+        // Ваши данные для сохранения
+        public int coins = 5; // Пример
+        public int MaxScore = 0;
+    }
+}
+
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +25,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject canvasAfterGame;
     public GameObject canvasGame;
+
+    
 
 
 
