@@ -358,6 +358,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2101367898}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ResumeGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &50039521
 GameObject:
   m_ObjectHideFlags: 0
@@ -1623,6 +1635,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2101367898}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ResumeGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 240370245}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: HandleDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &177659204
 GameObject:
   m_ObjectHideFlags: 0
@@ -2088,7 +2124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::player_controller
   ScoreManager: {fileID: 511519731}
-  GameManager: {fileID: 0}
+  GameManager: {fileID: 2101367898}
   playerTransform: {fileID: 1348027562}
   runningCollider: {fileID: 240370249}
   slidingCollider: {fileID: 240370248}
@@ -2097,12 +2133,18 @@ MonoBehaviour:
   damageOnHit: 1
   deathTrigger: Death
   forwardSpeed: 3
+  jumpForce: 1
+  gravity: -2.5
+  groundCheckDistance: 0.1
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  jumpCooldown: 1
+  groundCheckOffset: {x: 0, y: 0.1, z: 0}
   initialTimeScale: 1
   timeAccelerationRate: 0.01
   maxTimeScale: 3.05
   currentTimeScale: 0
-  barrierTag: barrier
-  barrierHitMessage: Hit barrier!
   lateralSpeed: 3
   leftLaneX: -0.5
   rightLaneX: 0.5
@@ -2115,14 +2157,8 @@ MonoBehaviour:
   jumpTrigger: jump
   dashTrigger: dash
   runTrigger: run
-  jumpForce: 1
-  gravity: -2.5
-  groundCheckDistance: 0.1
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  jumpCooldown: 1
-  groundCheckOffset: {x: 0, y: 0.1, z: 0}
+  barrierTag: barrier
+  barrierHitMessage: Hit barrier!
   slidingColliderDuration: 1
   runningColliderReactivateDelay: 0
   inspectorIsGrounded: 1
@@ -5645,6 +5681,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 2101367898}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: PauseGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -14037,6 +14085,9 @@ MonoBehaviour:
   road_generator: {fileID: 902081473}
   ScoreManager: {fileID: 511519731}
   PlayerController: {fileID: 240370245}
+  player: {fileID: 240370244}
+  canvasAfterGame: {fileID: 1743656926}
+  canvasGame: {fileID: 2039863247}
 --- !u!1001 &2645317952403959252
 PrefabInstance:
   m_ObjectHideFlags: 0

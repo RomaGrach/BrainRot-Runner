@@ -17,66 +17,13 @@ public class PlayerController : MonoBehaviour
     public Collider slidingCollider;
 
     [Header("Health")]
-    [Tooltip("Максимальное здоровье игрока.")]
     public int maxHealth = 3;
-    [Tooltip("Текущее здоровье игрока (для отображения).")]
     public int currentHealth;
-    [Tooltip("Урон при столкновении с препятствием.")]
     public int damageOnHit = 1;
-    [Tooltip("Имя триггера для анимации смерти.")]
     public string deathTrigger = "Death";
 
-    [Header("Forward Movement")]
-    [Tooltip("Скорость движения вперёд (единиц в секунду).")]
+    [Header("Movement & Physics")]
     public float forwardSpeed = 5f;
-
-    [Header("Time Acceleration")]
-    [Tooltip("Начальный множитель времени (Time.timeScale).")]
-    public float initialTimeScale = 1f;
-    [Tooltip("Скорость ускорения времени (единиц timeScale в секунду).")]
-    public float timeAccelerationRate = 0.1f;
-    [Tooltip("Максимальный множитель времени.")]
-    public float maxTimeScale = 3f;
-    [Tooltip("Текущий множитель времени (для отображения в инспекторе).")]
-    public float currentTimeScale;
-
-    [Header("Obstacle Handling")]
-    [Tooltip("Тег препятствий (BoxCollider с isTrigger).")]
-    public string barrierTag = "Barrier";
-    [Tooltip("Сообщение при попадании в консоль.")]
-    public string barrierHitMessage = "Hit barrier!";
-
-    [Header("Lateral Movement")]
-    [Tooltip("Скорость смены дорожки (единиц/с).")]
-    public float lateralSpeed = 10f;
-    [Tooltip("Смещение X для левой дорожки.")]
-    public float leftLaneX = -2f;
-    [Tooltip("Смещение X для правой дорожки.")]
-    public float rightLaneX = 2f;
-
-    [Header("Turn/Yaw Settings")]
-    [Tooltip("Макс. угол наклона при смене дорожки.")]
-    public float yawAngle = 30f;
-    [Tooltip("Скорость поворота модели (град/с).")]
-    public float yawSpeed = 300f;
-    [Tooltip("Скорость возврата в прямое положение (град/с).")]
-    public float returnYawSpeed = 120f;
-
-    [Header("Swipe Settings")]
-    [Tooltip("Разрешить свайпы.")]
-    public bool enableSwipe = true;
-    [Range(0.05f, 0.5f)]
-    [Tooltip("Доля экрана для распознавания свайпа.")]
-    public float swipeThresholdFraction = 0.2f;
-
-    [Header("Animation Settings")]
-    [Tooltip("Animator для управления анимациями.")]
-    public Animator animator;
-    public string jumpTrigger = "Jump";
-    public string dashTrigger = "Dash";
-    public string runTrigger = "Run";
-
-    [Header("Jump Physics")]
     public float jumpForce = 8f;
     public float gravity = -20f;
     public float groundCheckDistance = 0.1f;
@@ -84,17 +31,46 @@ public class PlayerController : MonoBehaviour
     public float jumpCooldown = 1f;
     public Vector3 groundCheckOffset = new Vector3(0f, 0.1f, 0f);
 
+    [Header("Time Acceleration")]
+    public float initialTimeScale = 1f;
+    public float timeAccelerationRate = 0.1f;
+    public float maxTimeScale = 3f;
+    public float currentTimeScale;
+
+    [Header("Lateral Movement")]
+    public float lateralSpeed = 10f;
+    public float leftLaneX = -2f;
+    public float rightLaneX = 2f;
+
+    [Header("Turn/Yaw Settings")]
+    public float yawAngle = 30f;
+    public float yawSpeed = 300f;
+    public float returnYawSpeed = 120f;
+
+    [Header("Swipe Settings")]
+    public bool enableSwipe = true;
+    [Range(0.05f, 0.5f)]
+    public float swipeThresholdFraction = 0.2f;
+
+    [Header("Animation Settings")]
+    public Animator animator;
+    public string jumpTrigger = "Jump";
+    public string dashTrigger = "Dash";
+    public string runTrigger = "Run";
+
+    [Header("Obstacle Handling")]
+    public string barrierTag = "Barrier";
+    public string barrierHitMessage = "Hit barrier!";
+
     [Header("Collider Timing")]
-    [Tooltip("Сколько сек. активен коллайдер для слайда.")]
     public float slidingColliderDuration = 1f;
-    [Tooltip("Задержка перед реактивацией бегового коллайдера.")]
     public float runningColliderReactivateDelay = 0f;
 
     [Header("Debug Info")]
     public bool inspectorIsGrounded;
     public float inspectorGroundDistance;
 
-    // внутренние поля
+    // internal state
     private Vector3[] laneOffsets;
     private int currentLane = 1;
     private float targetYaw = 0f;
@@ -106,14 +82,16 @@ public class PlayerController : MonoBehaviour
     private float lastJumpTime = -Mathf.Infinity;
     private Coroutine colliderSwitchRoutine;
     private bool isDead = false;
-
-    // NEW: Flag to control game start
     private bool isGameStarted = false;
+
+    private Vector3 startPosition;
 
     void Start()
     {
-        // Дорожки и thresholds свайпа
-        laneOffsets = new Vector3[3]
+        // Save spawn position
+        startPosition = transform.position;
+
+        laneOffsets = new Vector3[]
         {
             new Vector3(leftLaneX, 0f, 0f),
             Vector3.zero,
@@ -122,13 +100,11 @@ public class PlayerController : MonoBehaviour
         swipeThresholdX = Screen.width * swipeThresholdFraction;
         swipeThresholdY = Screen.height * swipeThresholdFraction;
 
-        // Проверка ссылок
         if (playerTransform == null) Debug.LogError("Assign playerTransform in inspector.");
         if (animator == null) Debug.LogError("Assign animator in inspector.");
         if (runningCollider == null) Debug.LogError("Assign runningCollider in inspector.");
         if (slidingCollider == null) Debug.LogError("Assign slidingCollider in inspector.");
 
-        // Инициализация
         runningCollider.enabled = true;
         slidingCollider.enabled = false;
         currentHealth = maxHealth;
@@ -136,8 +112,36 @@ public class PlayerController : MonoBehaviour
         Time.timeScale = initialTimeScale;
         currentTimeScale = Time.timeScale;
 
-        // Игра не стартует сразу
         isGameStarted = false;
+    }
+
+    /// <summary>
+    /// Подготавливает игру: сбрасывает состояние игрока к стартовому, без запуска движения.
+    /// </summary>
+    public void RestartGame()
+    {
+        // Reset flags
+        isDead = false;
+        isGameStarted = false;
+
+        // Reset health and time
+        currentHealth = maxHealth;
+        Time.timeScale = initialTimeScale;
+        currentTimeScale = Time.timeScale;
+
+        // Reset position and physics
+        transform.position = startPosition;
+        verticalVelocity = 0f;
+        isGrounded = false;
+        wasGrounded = false;
+
+        // Reset colliders and animator
+        runningCollider.enabled = true;
+        slidingCollider.enabled = false;
+        animator.ResetTrigger(deathTrigger);
+        animator.ResetTrigger(jumpTrigger);
+        animator.ResetTrigger(dashTrigger);
+        animator.ResetTrigger(runTrigger);
     }
 
     /// <summary>
@@ -148,12 +152,10 @@ public class PlayerController : MonoBehaviour
         if (isGameStarted || isDead) return;
         isGameStarted = true;
         animator.SetTrigger(runTrigger);
-        //ScoreManager.StartGame();
     }
 
     void Update()
     {
-        // Не выполнять до начала игры или после смерти
         if (!isGameStarted || isDead) return;
 
         HandleInput();
@@ -165,7 +167,6 @@ public class PlayerController : MonoBehaviour
         MoveLateral();
         ApplyYaw();
 
-        // Отладочный луч
         Vector3 origin = transform.position + groundCheckOffset;
         Debug.DrawRay(origin, Vector3.down * inspectorGroundDistance,
                       isGrounded ? Color.green : Color.red);
@@ -334,7 +335,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void HandleDeath()
+    public void HandleDeath()
     {
         isDead = true;
         animator.SetTrigger(deathTrigger);
