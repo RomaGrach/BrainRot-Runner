@@ -1,6 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Генерирует дорожные сегменты впереди игрока по дизайну "бесконечной дороги".
+/// До вызова StartGame() ничего не генерируется.
+/// </summary>
 public class road_generator : MonoBehaviour
 {
     [Header("Prefabs & Pooling")]
@@ -19,9 +23,14 @@ public class road_generator : MonoBehaviour
     [Tooltip("Tag of the child object inside each segment that marks the next spawn point.")]
     public string nextPointTag = "Next Point";
 
-    // Internals
+    [Header("Start Point")]
+    [Tooltip("Начальная точка, от которой будет начинаться генерация сегментов.")]
+    public Transform startPoint;
+
+    // Внутренние поля
     private Queue<GameObject> activeSegments = new Queue<GameObject>();
-    private Transform lastEndPoint;  // where next segment will spawn
+    private Transform lastEndPoint;  // Точка, откуда спавнить следующий сегмент
+    private bool isGameStarted = false;
 
     void Start()
     {
@@ -32,34 +41,67 @@ public class road_generator : MonoBehaviour
             return;
         }
 
-        // First spawn uses this object's own position
-        lastEndPoint = this.transform;
-        for (int i = 0; i < maxActiveSegments; i++)
-            SpawnNextSegment();
+        activeSegments.Clear();
+        isGameStarted = false;
     }
 
     void Update()
     {
-        if (playerTransform == null) return;
+        if (!isGameStarted || playerTransform == null)
+            return;
 
-        // If player is getting close enough to the last endpoint, spawn one more
         float dist = lastEndPoint.position.z - playerTransform.position.z;
         if (dist < spawnAheadDistance)
             SpawnNextSegment();
     }
 
+    /// <summary>
+    /// Запускает генерацию сегментов: первые maxActiveSegments штук.
+    /// Вызывать извне, когда игра действительно стартует.
+    /// </summary>
+    public void StartGame()
+    {
+        if (isGameStarted)
+            return;
+
+        lastEndPoint = (startPoint != null) ? startPoint : this.transform;
+        for (int i = 0; i < maxActiveSegments; i++)
+            SpawnNextSegment();
+
+        isGameStarted = true;
+    }
+
+    /// <summary>
+    /// Останавливает генерацию новых сегментов.
+    /// </summary>
+    public void StopGame()
+    {
+        if (!isGameStarted)
+            return;
+
+        isGameStarted = false;
+    }
+
+    /// <summary>
+    /// Очищает все текущие сгенерированные сегменты.
+    /// </summary>
+    public void ClearGame()
+    {
+        // Удаляем все активные сегменты
+        while (activeSegments.Count > 0)
+        {
+            GameObject old = activeSegments.Dequeue();
+            if (old != null)
+                Destroy(old);
+        }
+    }
+
     private void SpawnNextSegment()
     {
-        // Pick a random prefab
         GameObject prefab = segmentPrefabs[Random.Range(0, segmentPrefabs.Length)];
-
-        // Instantiate at the last endpoint's world position & rotation (no parent)
         GameObject seg = Instantiate(prefab, lastEndPoint.position, lastEndPoint.rotation);
-
-        // Enqueue for pooling
         activeSegments.Enqueue(seg);
 
-        // Find the child transform tagged as the next point
         Transform next = null;
         foreach (Transform t in seg.GetComponentsInChildren<Transform>(true))
         {
@@ -75,10 +117,8 @@ public class road_generator : MonoBehaviour
             return;
         }
 
-        // Update endpoint for the next spawn
         lastEndPoint = next;
 
-        // If we're over the pool size, destroy the oldest segment
         if (activeSegments.Count > maxActiveSegments)
         {
             GameObject old = activeSegments.Dequeue();

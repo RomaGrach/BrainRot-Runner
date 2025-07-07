@@ -2088,6 +2088,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::player_controller
   ScoreManager: {fileID: 511519731}
+  GameManager: {fileID: 0}
   playerTransform: {fileID: 1348027562}
   runningCollider: {fileID: 240370249}
   slidingCollider: {fileID: 240370248}
@@ -4486,6 +4487,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2101367898}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &610492992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6567,6 +6580,7 @@ MonoBehaviour:
   playerTransform: {fileID: 240370246}
   spawnAheadDistance: 100
   nextPointTag: nextPoint
+  startPoint: {fileID: 1270092082}
 --- !u!4 &902081474
 Transform:
   m_ObjectHideFlags: 0
@@ -8276,6 +8290,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1232866793}
   m_CullTransparentMesh: 1
+--- !u!4 &1270092082 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2745884300153760395, guid: b40f3f4dd52734903a55367cbb722c73, type: 3}
+  m_PrefabInstance: {fileID: 1578040746}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1284322994
 GameObject:
   m_ObjectHideFlags: 0
@@ -10338,6 +10357,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2101367898}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: Gohome
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1481947157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10940,6 +10971,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2101367898}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -13947,6 +13990,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2101252956}
   m_CullTransparentMesh: 1
+--- !u!1 &2101367896
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2101367897}
+  - component: {fileID: 2101367898}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2101367897
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101367896}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2101367898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101367896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9d083c3a3f994dd6909da78d5166045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  road_generator: {fileID: 902081473}
+  ScoreManager: {fileID: 511519731}
+  PlayerController: {fileID: 240370245}
 --- !u!1001 &2645317952403959252
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14088,3 +14178,4 @@ SceneRoots:
   - {fileID: 2645317952403959252}
   - {fileID: 2039863251}
   - {fileID: 1743656930}
+  - {fileID: 2101367897}

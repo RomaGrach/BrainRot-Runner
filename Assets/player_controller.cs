@@ -3,8 +3,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
+    [Header("Score")]
     public ScoreManager ScoreManager;
+
+    public GameManager GameManager;
 
     [Header("References")]
     [Tooltip("Transform визуальной модели (используется только для поворота/наклона).")]
@@ -105,38 +107,54 @@ public class PlayerController : MonoBehaviour
     private Coroutine colliderSwitchRoutine;
     private bool isDead = false;
 
+    // NEW: Flag to control game start
+    private bool isGameStarted = false;
+
     void Start()
     {
-        // дорожки
+        // Дорожки и thresholds свайпа
         laneOffsets = new Vector3[3]
         {
             new Vector3(leftLaneX, 0f, 0f),
             Vector3.zero,
             new Vector3(rightLaneX, 0f, 0f)
         };
-
-        // thresholds свайпа
         swipeThresholdX = Screen.width * swipeThresholdFraction;
         swipeThresholdY = Screen.height * swipeThresholdFraction;
 
-        // проверяем ссылки
+        // Проверка ссылок
         if (playerTransform == null) Debug.LogError("Assign playerTransform in inspector.");
         if (animator == null) Debug.LogError("Assign animator in inspector.");
         if (runningCollider == null) Debug.LogError("Assign runningCollider in inspector.");
         if (slidingCollider == null) Debug.LogError("Assign slidingCollider in inspector.");
 
-        // инициализация
+        // Инициализация
         runningCollider.enabled = true;
         slidingCollider.enabled = false;
         currentHealth = maxHealth;
 
         Time.timeScale = initialTimeScale;
         currentTimeScale = Time.timeScale;
+
+        // Игра не стартует сразу
+        isGameStarted = false;
+    }
+
+    /// <summary>
+    /// Запускает игру: начинает движение и анимацию бега.
+    /// </summary>
+    public void StartGame()
+    {
+        if (isGameStarted || isDead) return;
+        isGameStarted = true;
+        animator.SetTrigger(runTrigger);
+        //ScoreManager.StartGame();
     }
 
     void Update()
     {
-        if (isDead) return;
+        // Не выполнять до начала игры или после смерти
+        if (!isGameStarted || isDead) return;
 
         HandleInput();
         CheckGround();
@@ -147,7 +165,7 @@ public class PlayerController : MonoBehaviour
         MoveLateral();
         ApplyYaw();
 
-        // отладочный луч
+        // Отладочный луч
         Vector3 origin = transform.position + groundCheckOffset;
         Debug.DrawRay(origin, Vector3.down * inspectorGroundDistance,
                       isGrounded ? Color.green : Color.red);
@@ -181,15 +199,10 @@ public class PlayerController : MonoBehaviour
             else if (t.phase == TouchPhase.Moved && isSwiping)
             {
                 Vector2 delta = t.position - swipeStart;
-                if (Mathf.Abs(delta.y) > swipeThresholdY &&
-                    Mathf.Abs(delta.y) > Mathf.Abs(delta.x))
+                if (Mathf.Abs(delta.y) > swipeThresholdY && Mathf.Abs(delta.y) > Mathf.Abs(delta.x))
                 {
                     if (delta.y > 0) TryJump();
-                    else
-                    {
-                        animator.SetTrigger(dashTrigger);
-                        StartColliderSwitch();
-                    }
+                    else { animator.SetTrigger(dashTrigger); StartColliderSwitch(); }
                     isSwiping = false;
                 }
                 else if (Mathf.Abs(delta.x) > swipeThresholdX)
@@ -303,7 +316,8 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (isDead) return;
+        if (!isGameStarted || isDead) return;
+
         Debug.Log(other.tag);
         ScoreManager.OnTriggerEnter(other);
 
@@ -324,13 +338,11 @@ public class PlayerController : MonoBehaviour
     {
         isDead = true;
         animator.SetTrigger(deathTrigger);
-        // Вернуть время на нормальный масштаб
         Time.timeScale = initialTimeScale;
         currentTimeScale = Time.timeScale;
-        // Отключаем все коллайдеры, чтобы не было дальнейших столкновений
         runningCollider.enabled = false;
         slidingCollider.enabled = false;
 
-        ScoreManager.StopGame();
+        GameManager.lousGame();
     }
 }
