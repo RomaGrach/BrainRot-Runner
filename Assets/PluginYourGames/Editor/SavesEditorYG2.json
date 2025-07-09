@@ -1,6 +1,12 @@
 {
-    "coins": 27,
-    "MaxScore": 2272,
+    "coins": 63,
+    "MaxScore": 1525,
+    "skins": [
+        true,
+        false,
+        false
+    ],
+    "NowSkin": 0,
     "intExample": 5,
     "strExample": "Hello!",
     "boolExample": [
@@ -9,5 +15,5 @@
         false,
         false
     ],
-    "idSave": 7
+    "idSave": 2
 }

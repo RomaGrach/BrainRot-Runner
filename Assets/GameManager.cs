@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using YG;  // PluginYG2 namespace
 
 
 namespace YG
@@ -9,6 +10,10 @@ namespace YG
         // Ваши данные для сохранения
         public int coins = 5; // Пример
         public int MaxScore = 0;
+        public bool[] skins = new bool[] { true, false, false, false };
+        public int NowSkin = 0;
+        public float[] itemsDur = new float[] { 10f };
+        public int[] itemsDurPrise = new int[] { 100 };
     }
 }
 
@@ -19,6 +24,7 @@ public class GameManager : MonoBehaviour
     public road_generator road_generator;
     public ScoreManager ScoreManager;
     public PlayerController PlayerController;
+    public Camera_Controller Camera_Controller;
 
     [Header("Player")]
     public GameObject player;
@@ -49,6 +55,7 @@ public class GameManager : MonoBehaviour
         PlayerController.StartGame();
         road_generator.StartGame();
         ScoreManager.StartGame();
+        Camera_Controller.StartGameCamera();
     }
 
     /// <summary>
@@ -56,6 +63,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void lousGame()
     {
+        YG2.SaveProgress();
         road_generator.StopGame();
         ScoreManager.StopGame();
         canvasAfterGame.SetActive(true);
@@ -69,8 +77,9 @@ public class GameManager : MonoBehaviour
     {
         road_generator.ClearGame();
         PlayerController.RestartGame();
+        Camera_Controller.ReturnCamera();
 
-        
+
     }
 
     /// <summary>

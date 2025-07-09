@@ -86,6 +86,24 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 startPosition;
 
+    public GameObject[] heals;
+
+    public void healsUpdate()
+    {
+
+        for (int i = 0; i < maxHealth; i++)
+        {
+            heals[i].SetActive(false);
+        }
+
+        for (int i = 0; i < currentHealth; i++)
+        {
+            heals[i].SetActive(true);
+        }
+
+    }
+
+
     void Start()
     {
         // Save spawn position
@@ -173,6 +191,8 @@ public class PlayerController : MonoBehaviour
         Debug.DrawRay(origin, Vector3.down * inspectorGroundDistance,
                       isGrounded ? Color.green : Color.red);
         inspectorIsGrounded = isGrounded;
+
+        healsUpdate();
     }
 
     private void HandleInput()
