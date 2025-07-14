@@ -2,7 +2,6 @@ using TMPro;
 using UnityEngine;
 using YG;  // PluginYG2 namespace
 
-
 namespace YG
 {
     public partial class SavesYG
@@ -16,7 +15,6 @@ namespace YG
         public int[] itemsDurPrise = new int[] { 100 };
     }
 }
-
 
 public class GameManager : MonoBehaviour
 {
@@ -32,17 +30,30 @@ public class GameManager : MonoBehaviour
     public GameObject canvasAfterGame;
     public GameObject canvasGame;
 
-    
-
-
+    // --- Добавлено для отображения сохранённых параметров в Инспекторе ---
+    [Header("Save Data Visualization")]
+    [Tooltip("Текущее количество монет из saves.coins")]
+    public int savedCoins;
+    [Tooltip("Текущий MaxScore из saves.MaxScore")]
+    public int savedMaxScore;
+    public bool[] skins;
+    [Tooltip("Текущий индекс скина из saves.NowSkin")]
+    public int savedNowSkin;
+    [Tooltip("Текущие длительности из saves.itemsDur")]
+    public float[] savedItemsDur;
+    [Tooltip("Текущие стоимости из saves.itemsDurPrise")]
+    public int[] savedItemsDurPrise;
+    // --------------------------------------------------------------------
 
     // Временной масштаб перед паузой
     private float previousTimeScale = 1f;
     private bool isPaused = false;
 
+    private SavesYG saves => YG2.saves;
+
     void Start()
     {
-        
+        // Здесь осталось всё без изменений
     }
 
     /// <summary>
@@ -63,11 +74,12 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void lousGame()
     {
-        YG2.SaveProgress();
+        
         road_generator.StopGame();
         ScoreManager.StopGame();
         canvasAfterGame.SetActive(true);
         canvasGame.SetActive(false);
+        YG2.SaveProgress();
     }
 
     /// <summary>
@@ -75,11 +87,11 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void Gohome()
     {
+        YG2.InterstitialAdvShow();
+        YG2.SaveProgress();
         road_generator.ClearGame();
         PlayerController.RestartGame();
         Camera_Controller.ReturnCamera();
-
-
     }
 
     /// <summary>
@@ -88,9 +100,7 @@ public class GameManager : MonoBehaviour
     public void PauseGame()
     {
         if (isPaused) return;
-        // Сохраняем текущий Time.timeScale
         previousTimeScale = Time.timeScale;
-        // Останавливаем время
         Time.timeScale = 0f;
         isPaused = true;
     }
@@ -101,13 +111,20 @@ public class GameManager : MonoBehaviour
     public void ResumeGame()
     {
         if (!isPaused) return;
-        // Восстанавливаем предыдущий Time.timeScale
         Time.timeScale = previousTimeScale;
         isPaused = false;
     }
 
     void Update()
     {
+        // Обновляем поля для Инспектора каждый кадр
+        savedCoins = saves.coins;
+        savedMaxScore = saves.MaxScore;
+        savedNowSkin = saves.NowSkin;
+        savedItemsDur = saves.itemsDur;
+        savedItemsDurPrise = saves.itemsDurPrise;
+        skins = saves.skins;
+
         // При необходимости можно слушать ввод для паузы/снятия паузы:
         // if (Input.GetKeyDown(KeyCode.Escape))
         // {

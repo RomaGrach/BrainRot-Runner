@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using YG;
 
 [RequireComponent(typeof(Rigidbody))]
 public class MagnetController : MonoBehaviour
@@ -39,6 +40,9 @@ public class MagnetController : MonoBehaviour
 
     private void Awake()
     {
+
+        magnetDuration = YG2.saves.itemsDur[0];
+
         _rb = GetComponent<Rigidbody>();
         _rb.isKinematic = true;
 
@@ -48,6 +52,8 @@ public class MagnetController : MonoBehaviour
             attractionCollider.isTrigger = true;
             attractionCollider.enabled = false;
         }
+
+        
     }
 
     private void OnTriggerEnter(Collider other)

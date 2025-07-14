@@ -252,9 +252,6 @@ AnimatorStateMachine:
     m_State: {fileID: -6125660843745755159}
     m_Position: {x: 600, y: 380, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -2363744655571822408}
-    m_Position: {x: 40, y: -50, z: 0}
-  - serializedVersion: 1
     m_State: {fileID: 7539635159105216646}
     m_Position: {x: 310, y: 90, z: 0}
   - serializedVersion: 1
@@ -299,32 +296,6 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: dd4a423dace1b4e4a8eb54890262dba3, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
---- !u!1102 &-2363744655571822408
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'HumanM@Jump01 [RM]'
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 3094330708855449807, guid: b0464a78fb8d2f34ca8c7b09bf4f08c6, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

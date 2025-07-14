@@ -284,9 +284,12 @@ public class PlayerController : MonoBehaviour
 
     private void AccelerateTime()
     {
-        Time.timeScale += timeAccelerationRate * Time.unscaledDeltaTime;
-        Time.timeScale = Mathf.Min(Time.timeScale, maxTimeScale);
-        currentTimeScale = Time.timeScale;
+        if(Time.timeScale >= 1)
+        {
+            Time.timeScale += timeAccelerationRate * Time.unscaledDeltaTime;
+            Time.timeScale = Mathf.Min(Time.timeScale, maxTimeScale);
+            currentTimeScale = Time.timeScale;
+        }
     }
 
     private void MoveForward()

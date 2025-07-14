@@ -4,7 +4,6 @@ using YG;
 
 /// <summary>
 /// Один скрипт для учёта монеток и расстояния.
-/// Вешать на игрока (Collider с IsTrigger = true + Rigidbody).
 /// Вызывать StartGame() при старте и StopGame() при поражении.
 /// </summary>
 public class ScoreManager : MonoBehaviour
@@ -50,6 +49,9 @@ public class ScoreManager : MonoBehaviour
         // Добавляем дистанцию со временем
         DistanceScore += distanceMultiplier * Time.deltaTime;
         UpdateGameUI();
+
+        if (moneyMenu != null)
+            moneyMenu.text = YG2.saves.coins.ToString();
     }
 
     public void OnTriggerEnter(Collider other)
@@ -92,6 +94,7 @@ public class ScoreManager : MonoBehaviour
         if ((int)DistanceScore > YG2.saves.MaxScore)
         {
             YG2.saves.MaxScore = (int)DistanceScore;
+            YG2.SetLeaderboard("MaxScore", (int)DistanceScore);
         }
         // Принудительно сохраняем прогресс
         YG2.SaveProgress();

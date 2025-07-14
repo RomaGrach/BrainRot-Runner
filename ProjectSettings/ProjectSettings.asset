@@ -303,7 +303,7 @@ PlayerSettings:
     m_StaticBatching: 1
     m_DynamicBatching: 0
   - m_BuildTarget: WebGL
-    m_StaticBatching: 0
+    m_StaticBatching: 1
     m_DynamicBatching: 0
   m_BuildTargetShaderSettings: []
   m_BuildTargetGraphicsJobs:
@@ -660,7 +660,7 @@ PlayerSettings:
   webWasm2023: 0
   webEnableSubmoduleStrippingCompatibility: 0
   scriptingDefineSymbols:
-    WebGL: YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;NJSON_YG2;RU_YG2;Authorization_yg;Storage_yg
+    WebGL: YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;NJSON_YG2;RU_YG2;Authorization_yg;Storage_yg;Leaderboards_yg;InterstitialAdv_yg
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
