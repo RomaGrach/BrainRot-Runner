@@ -1,0 +1,13 @@
+{
+    "asset": "209608d7540b94bf9bf9f5d4ecdbc806",
+    "fileName": "01980e22-c9a7-7cb2-83c7-81e624595d17.wav",
+    "prompt": "coin pickup sound",
+    "negativePrompt": "",
+    "model": "0ee39b33-2893-4e0f-8c46-0e0bdd4eda85",
+    "modelName": "Text to Sound",
+    "customSeed": -1,
+    "w3CTraceId": "43de82a550f80115d3d69cb7f889fe48",
+    "duration": 1.475986361503601,
+    "autoTrim": true,
+    "hasReference": true
+}

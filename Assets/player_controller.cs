@@ -350,6 +350,7 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag(barrierTag))
         {
             currentHealth -= damageOnHit;
+            AudioManager.Instance.PlayDamage();
             Debug.Log($"{barrierHitMessage} ({other.name}). Health: {currentHealth}/{maxHealth}");
 
             Time.timeScale = initialTimeScale;

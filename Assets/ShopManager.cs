@@ -138,6 +138,8 @@ public class ShopManager : MonoBehaviour
                 saves.skins[idx] = true;
                 item.actionButtonText.text = "Выбрать";
                 YG2.SaveProgress();
+                AudioManager.Instance.PlayPurchase();
+
             }
             else
             {

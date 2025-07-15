@@ -51,9 +51,46 @@ public class GameManager : MonoBehaviour
 
     private SavesYG saves => YG2.saves;
 
+
+    // <summary>
+    /// Сброс всех сохранённых данных в значения по умолчанию.
+    /// Вызывается из контекстного меню в инспекторе (Reset Progress).
+    /// </summary>
+    [ContextMenu("Reset Progress")]
+    public void ResetProgress()
+    {
+        // Устанавливаем значения по умолчанию
+        saves.coins = 5;
+        saves.MaxScore = 0;
+        saves.skins = new bool[] { true, false, false, false };
+        saves.NowSkin = 0;
+        saves.itemsDur = new float[] { 10f };
+        saves.itemsDurPrise = new int[] { 100 };
+
+        // Сохраняем изменения
+        YG2.SaveProgress();
+
+        Debug.Log("Progress has been reset to default values.");
+    }
+
+    /// <summary>
+    /// Добавляет 100 монет к текущему балансу.
+    /// Вызывается из контекстного меню в инспекторе (Add 100 Coins).
+    /// </summary>
+    [ContextMenu("Add 100 Coins")]
+    public void Add100Coins()
+    {
+        saves.coins += 100;
+        YG2.SaveProgress();
+        Debug.Log("Added 100 coins.");
+    }
+
+
+
     void Start()
     {
         // Здесь осталось всё без изменений
+        AudioManager.Instance.PlayMenuMusic();
     }
 
     /// <summary>
@@ -62,6 +99,8 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         Gohome();
+        AudioManager.Instance.PlayLevelMusic();
+        AudioManager.Instance.PlayLevelStart();
         road_generator.ClearGame();
         PlayerController.StartGame();
         road_generator.StartGame();
@@ -74,7 +113,8 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void lousGame()
     {
-        
+        AudioManager.Instance.PlayLevelEnd();
+        AudioManager.Instance.PlayMenuMusic();
         road_generator.StopGame();
         ScoreManager.StopGame();
         canvasAfterGame.SetActive(true);

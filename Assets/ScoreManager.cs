@@ -43,6 +43,7 @@ public class ScoreManager : MonoBehaviour
 
     private void Update()
     {
+        moneyMenu.text = YG2.saves.coins.ToString();
         if (!isGameActive)
             return;
 
@@ -50,8 +51,8 @@ public class ScoreManager : MonoBehaviour
         DistanceScore += distanceMultiplier * Time.deltaTime;
         UpdateGameUI();
 
-        if (moneyMenu != null)
-            moneyMenu.text = YG2.saves.coins.ToString();
+        
+           
     }
 
     public void OnTriggerEnter(Collider other)
@@ -64,6 +65,7 @@ public class ScoreManager : MonoBehaviour
             // Собрали монетку
             CoinCount += pointsPerCoin;
             Destroy(other.gameObject);
+            AudioManager.Instance.PlayCoinPickup();
             UpdateGameUI();
         }
     }
