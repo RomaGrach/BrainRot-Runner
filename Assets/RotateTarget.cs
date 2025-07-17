@@ -13,6 +13,8 @@ public class RotateTarget : MonoBehaviour
     [Tooltip("Скорость вращения в градусах в секунду")]
     public float rotationSpeed = 180f;
 
+    
+
     void Update()
     {
         if (target != null)
