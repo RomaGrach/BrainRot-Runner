@@ -1,17 +1,17 @@
 {
-    "coins": 1105,
-    "MaxScore": 13606,
+    "coins": 34,
+    "MaxScore": 584,
     "skins": [
         true,
-        true,
-        true
+        false,
+        false
     ],
-    "NowSkin": 2,
+    "NowSkin": 0,
     "itemsDur": [
-        14.0
+        10.0
     ],
     "itemsDurPrise": [
-        400
+        100
     ],
     "intExample": 5,
     "strExample": "Hello!",
@@ -21,5 +21,5 @@
         false,
         false
     ],
-    "idSave": 197
+    "idSave": 14
 }

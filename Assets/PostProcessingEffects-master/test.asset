@@ -1,0 +1,646 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9120283879562464782
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fe485ae3cca6984689132ab07cbd0cf, type: 3}
+  m_Name: Ramp
+  m_EditorClassIdentifier: Assembly-CSharp::Ramp
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 0
+  color1:
+    overrideState: 1
+    value: {r: 0, g: 0, b: 1, a: 1}
+  color2:
+    overrideState: 1
+    value: {r: 1, g: 0, b: 0, a: 1}
+  angle:
+    overrideState: 1
+    value: -27
+  opacity:
+    overrideState: 1
+    value: 1
+  blendMode: 2
+--- !u!114 &-8274443806265693606
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 692afd57ae3744d4a8cab7a5b275a141, type: 3}
+  m_Name: Pencil
+  m_EditorClassIdentifier: Assembly-CSharp::Pencil
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 0
+  gradThreshold:
+    overrideState: 1
+    value: 0.00001
+  colorThreshold:
+    overrideState: 1
+    value: 1
+  sensivity:
+    overrideState: 1
+    value: 12.3
+--- !u!114 &-8198109483260592292
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b94fcd11afffcb142908bfcb1e261fba, type: 3}
+  m_Name: MotionBlur
+  m_EditorClassIdentifier: Unity.Postprocessing.Runtime::UnityEngine.Rendering.PostProcessing.MotionBlur
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 0
+  shutterAngle:
+    overrideState: 1
+    value: 202
+  sampleCount:
+    overrideState: 1
+    value: 4
+--- !u!114 &-7760073811542019945
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fff588725a229ed46a558e4b4160173b, type: 3}
+  m_Name: OilPaint
+  m_EditorClassIdentifier: Assembly-CSharp::OilPaint
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 0
+  radius:
+    overrideState: 1
+    value: 3
+--- !u!114 &-7609374987135955848
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e31544cabac1b6f42856b38f6a9308a2, type: 3}
+  m_Name: AnalogGlitch
+  m_EditorClassIdentifier: Assembly-CSharp::AnalogGlitch
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 0
+  scanLineJitter:
+    overrideState: 1
+    value: 0
+  verticalJump:
+    overrideState: 1
+    value: 0
+  horizontalShake:
+    overrideState: 1
+    value: 0
+  colorDrift:
+    overrideState: 1
+    value: 0
+--- !u!114 &-7506330819462004554
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48a79b01ea5641d4aa6daa2e23605641, type: 3}
+  m_Name: Bloom
+  m_EditorClassIdentifier: Unity.Postprocessing.Runtime::UnityEngine.Rendering.PostProcessing.Bloom
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 0
+  intensity:
+    overrideState: 1
+    value: 7.4
+  threshold:
+    overrideState: 0
+    value: 1
+  softKnee:
+    overrideState: 0
+    value: 0.5
+  clamp:
+    overrideState: 0
+    value: 65472
+  diffusion:
+    overrideState: 0
+    value: 7
+  anamorphicRatio:
+    overrideState: 0
+    value: 0
+  color:
+    overrideState: 0
+    value: {r: 1, g: 1, b: 1, a: 1}
+  fastMode:
+    overrideState: 0
+    value: 0
+  dirtTexture:
+    overrideState: 0
+    value: {fileID: 0}
+    defaultState: 1
+  dirtIntensity:
+    overrideState: 0
+    value: 0
+--- !u!114 &-6290081475731772554
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5098162cd245e7f4abe259b24c823352, type: 3}
+  m_Name: Streak
+  m_EditorClassIdentifier: Assembly-CSharp::Streak
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 0
+  threshold:
+    overrideState: 1
+    value: 0
+  stretch:
+    overrideState: 1
+    value: 1
+  intensity:
+    overrideState: 1
+    value: 0.402
+  tint:
+    overrideState: 1
+    value: {r: 0.55, g: 0.55, b: 1, a: 1}
+--- !u!114 &-3440220152979101886
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d65e486e4de6e5448a8fbb43dc8756a0, type: 3}
+  m_Name: Grain
+  m_EditorClassIdentifier: Unity.Postprocessing.Runtime::UnityEngine.Rendering.PostProcessing.Grain
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 0
+  colored:
+    overrideState: 0
+    value: 1
+  intensity:
+    overrideState: 1
+    value: 1
+  size:
+    overrideState: 0
+    value: 1
+  lumContrib:
+    overrideState: 0
+    value: 0.8
+--- !u!114 &-3339723064647271864
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b62f0be977c79ff408c217d5b6cbe810, type: 3}
+  m_Name: FakeHDR
+  m_EditorClassIdentifier: Assembly-CSharp::FakeHDR
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 0
+  power:
+    overrideState: 1
+    value: 1.38
+  radius1:
+    overrideState: 1
+    value: 0.6
+  radius2:
+    overrideState: 1
+    value: 2.63
+--- !u!114 &-3275932574238438663
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94b293af54a95c14c9e9ab7fa4b01682, type: 3}
+  m_Name: Grayscale
+  m_EditorClassIdentifier: Assembly-CSharp::Grayscale
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 0
+  blend:
+    overrideState: 1
+    value: 1
+--- !u!114 &-2934184860439285034
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 943c7ee392bdfac468997d8e2d873cfb, type: 3}
+  m_Name: DigitalGlitch
+  m_EditorClassIdentifier: Assembly-CSharp::DigitalGlitch
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 0
+  intensity:
+    overrideState: 1
+    value: 0
+--- !u!114 &-1309179467375219578
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f2858d35f0564d4aa8c482fb12742bb, type: 3}
+  m_Name: Cartoon
+  m_EditorClassIdentifier: Assembly-CSharp::Cartoon
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 0
+  power:
+    overrideState: 1
+    value: 0.97
+  edgeSlope:
+    overrideState: 1
+    value: 0.82
+--- !u!114 &-861376654399267476
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 556797029e73b2347956b6579e77e05b, type: 3}
+  m_Name: DepthOfField
+  m_EditorClassIdentifier: Unity.Postprocessing.Runtime::UnityEngine.Rendering.PostProcessing.DepthOfField
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 0
+  focusDistance:
+    overrideState: 1
+    value: 2.62
+  aperture:
+    overrideState: 1
+    value: 32
+  focalLength:
+    overrideState: 1
+    value: 120
+  kernelSize:
+    overrideState: 0
+    value: 1
+--- !u!114 &-520558308948701159
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bc8eedd7ee39214bab45aca001243ce, type: 3}
+  m_Name: Contour
+  m_EditorClassIdentifier: Assembly-CSharp::Contour
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 0
+  lineColor:
+    overrideState: 1
+    value: {r: 0, g: 0, b: 0, a: 1}
+  bgColor:
+    overrideState: 1
+    value: {r: 1, g: 1, b: 1, a: 0}
+  lowerThreshold:
+    overrideState: 1
+    value: 0.304
+  upperThreshold:
+    overrideState: 1
+    value: 0.746
+  colorSensitivity:
+    overrideState: 1
+    value: 0.623
+  depthSensitivity:
+    overrideState: 1
+    value: 0.28
+  normalSensitivity:
+    overrideState: 1
+    value: 0.466
+  falloffDepth:
+    overrideState: 1
+    value: 44
+--- !u!114 &-329448996115629618
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6050e2d5de785ce4d931e4dbdbf2d755, type: 3}
+  m_Name: ChromaticAberration
+  m_EditorClassIdentifier: Unity.Postprocessing.Runtime::UnityEngine.Rendering.PostProcessing.ChromaticAberration
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 0
+  spectralLut:
+    overrideState: 1
+    value: {fileID: 0}
+    defaultState: 1
+  intensity:
+    overrideState: 1
+    value: 1
+  fastMode:
+    overrideState: 1
+    value: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e6292b2c06870d4495f009f912b9600, type: 3}
+  m_Name: test
+  m_EditorClassIdentifier: Unity.Postprocessing.Runtime::UnityEngine.Rendering.PostProcessing.PostProcessProfile
+  settings:
+  - {fileID: -7760073811542019945}
+  - {fileID: -861376654399267476}
+  - {fileID: -1309179467375219578}
+  - {fileID: -8274443806265693606}
+  - {fileID: -3275932574238438663}
+  - {fileID: 745088638779895291}
+  - {fileID: 4909643784151530161}
+  - {fileID: 3262516835393240196}
+  - {fileID: -3339723064647271864}
+  - {fileID: -9120283879562464782}
+  - {fileID: -2934184860439285034}
+  - {fileID: 3060273022562113825}
+  - {fileID: -520558308948701159}
+  - {fileID: -7609374987135955848}
+  - {fileID: -6290081475731772554}
+  - {fileID: -7506330819462004554}
+  - {fileID: 8453050029039410694}
+  - {fileID: -8198109483260592292}
+  - {fileID: -329448996115629618}
+  - {fileID: -3440220152979101886}
+--- !u!114 &745088638779895291
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2b0f6b8c93dc044ea0394d8208f38d8, type: 3}
+  m_Name: AdaptiveFog
+  m_EditorClassIdentifier: Assembly-CSharp::AdaptiveFog
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 0
+  fogColor:
+    overrideState: 1
+    value: {r: 0.9, g: 0.9, b: 0.9, a: 1}
+  maxFogFactor:
+    overrideState: 1
+    value: 0.52
+  fogCurve:
+    overrideState: 1
+    value: 175
+  fogStart:
+    overrideState: 1
+    value: 0
+  bloomThreshold:
+    overrideState: 1
+    value: 50
+  bloomPower:
+    overrideState: 1
+    value: 100
+  bloomWidth:
+    overrideState: 1
+    value: 1
+--- !u!114 &3060273022562113825
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f8c6d62881283a4ab75bee6ae6eb75c, type: 3}
+  m_Name: Isoline
+  m_EditorClassIdentifier: Assembly-CSharp::Isoline
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 0
+  baseAxis:
+    overrideState: 1
+    value: {x: 0, y: 1.24, z: 0}
+  lineInterval:
+    overrideState: 1
+    value: 0.13
+  lineOffset:
+    overrideState: 1
+    value: 0.48
+  lineScroll:
+    overrideState: 1
+    value: 1.7
+  lineColor:
+    overrideState: 1
+    value: {r: 1.5, g: 0.2, b: 0.2, a: 1}
+  lineWidth:
+    overrideState: 1
+    value: 7.03
+  sourceContribution:
+    overrideState: 1
+    value: 0
+  backgroundColor:
+    overrideState: 1
+    value: {r: 0, g: 0, b: 0, a: 0}
+  modulationStrength:
+    overrideState: 1
+    value: 0.66
+  modulationFrequency:
+    overrideState: 1
+    value: 0.802
+  modulationWidth:
+    overrideState: 1
+    value: 0.519
+  modulationOffset:
+    overrideState: 1
+    value: 3.68
+  modulationScroll:
+    overrideState: 1
+    value: 1.61
+--- !u!114 &3262516835393240196
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d49df8b3f7e90924e8e7a891d09fedd9, type: 3}
+  m_Name: Technicolor
+  m_EditorClassIdentifier: Assembly-CSharp::Technicolor
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 0
+  colorStrength:
+    overrideState: 1
+    value: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+  brightness:
+    overrideState: 1
+    value: 1.098
+  saturation:
+    overrideState: 1
+    value: 1.5
+  strength:
+    overrideState: 1
+    value: 1
+--- !u!114 &4909643784151530161
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d16f964a58aa6f4386cda09e1ceade7, type: 3}
+  m_Name: Tonemap
+  m_EditorClassIdentifier: Assembly-CSharp::Tonemap
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 0
+  gamma:
+    overrideState: 1
+    value: 0.784
+  exposure:
+    overrideState: 1
+    value: 0.029
+  saturation:
+    overrideState: 1
+    value: 0.176
+  bleach:
+    overrideState: 1
+    value: 0.789
+  defog:
+    overrideState: 0
+    value: 0
+  defogColor:
+    overrideState: 0
+    value: {r: 0, g: 0, b: 1, a: 1}
+--- !u!114 &8453050029039410694
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1cb7e9e120078f43bce4f0b1be547a7, type: 3}
+  m_Name: AmbientOcclusion
+  m_EditorClassIdentifier: Unity.Postprocessing.Runtime::UnityEngine.Rendering.PostProcessing.AmbientOcclusion
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 0
+  mode:
+    overrideState: 1
+    value: 1
+  intensity:
+    overrideState: 1
+    value: 2.68
+  color:
+    overrideState: 1
+    value: {r: 0, g: 0, b: 0, a: 1}
+  ambientOnly:
+    overrideState: 1
+    value: 1
+  noiseFilterTolerance:
+    overrideState: 0
+    value: 0
+  blurTolerance:
+    overrideState: 0
+    value: -4.6
+  upsampleTolerance:
+    overrideState: 0
+    value: -12
+  thicknessModifier:
+    overrideState: 1
+    value: 7.64
+  zBias:
+    overrideState: 1
+    value: 0.0001
+  directLightingStrength:
+    overrideState: 0
+    value: 0
+  radius:
+    overrideState: 0
+    value: 0.25
+  quality:
+    overrideState: 0
+    value: 2

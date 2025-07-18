@@ -1,4 +1,5 @@
 Authorization v1.022
-InterstitialAdv v1.002
+InterstitialAdv v1.003
 Leaderboards v1.01
+RewardedAdv v1.001
 Storage v1.02

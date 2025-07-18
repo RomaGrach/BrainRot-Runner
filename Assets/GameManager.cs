@@ -127,7 +127,6 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void Gohome()
     {
-        YG2.InterstitialAdvShow();
         YG2.SaveProgress();
         road_generator.ClearGame();
         PlayerController.RestartGame();
@@ -153,6 +152,11 @@ public class GameManager : MonoBehaviour
         if (!isPaused) return;
         Time.timeScale = previousTimeScale;
         isPaused = false;
+    }
+
+    public void ShowAd()
+    {
+        YG2.InterstitialAdvShow();
     }
 
     void Update()

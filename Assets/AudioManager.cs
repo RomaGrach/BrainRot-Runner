@@ -1,8 +1,15 @@
 using System.Linq;
 using UnityEngine;
+using TMPro;
 
 public class AudioManager : MonoBehaviour
 {
+
+    [Header("UI: кнопки звука")]
+    [SerializeField]
+    private TMP_Text[] soundToggleLabels;  // Drag & drop все TextMeshPro на эти слоты в инспекторе
+
+
     // ---------------------- INSTANCE ----------------------
     public static AudioManager Instance { get; private set; }
 
@@ -78,6 +85,23 @@ public class AudioManager : MonoBehaviour
 
         if (musicSource != null)
             musicSource.loop = true;
+    }
+
+    public void ToggleSoundAndRefreshUI()
+    {
+        // Переключаем звук (ваш уже реализованный метод)
+        ToggleMute();
+
+        // Решаем, что писать в тексте
+        bool isOn = volumeMultiplier > 0f;
+        string status = isOn ? "Звук: включен" : "Звук: выключен";
+
+        // Обновляем все подключённые TMP-тексты
+        foreach (var label in soundToggleLabels)
+        {
+            if (label != null)
+                label.text = status;
+        }
     }
 
     // ---------------------- MUSIC ----------------------

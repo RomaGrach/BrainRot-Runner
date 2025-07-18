@@ -8,6 +8,9 @@ using YG;
 /// </summary>
 public class ScoreManager : MonoBehaviour
 {
+
+    [SerializeField] private string rewardAdID = "AddCoin";
+
     [Header("Current Metrics (Visible in Inspector)")]
     public int CoinCount = 0;
     public float DistanceScore = 0f;
@@ -19,6 +22,7 @@ public class ScoreManager : MonoBehaviour
     [Tooltip("Коэффициент для перевода времени в дистанцию")]
     [SerializeField]
     private float distanceMultiplier = 1f;
+    private int lastSessionCoinCount = 0;
 
     [Header("UI References")]
     public TextMeshProUGUI scoreMenuRecord;
@@ -93,6 +97,7 @@ public class ScoreManager : MonoBehaviour
 
         // Сохраняем run-величины в YG2
         YG2.saves.coins += CoinCount;
+        lastSessionCoinCount = CoinCount;
         if ((int)DistanceScore > YG2.saves.MaxScore)
         {
             YG2.saves.MaxScore = (int)DistanceScore;
@@ -139,5 +144,20 @@ public class ScoreManager : MonoBehaviour
             scoreAfterGame.text = ((int)DistanceScore).ToString();
         if (moneyAfterGame != null)
             moneyAfterGame.text = CoinCount.ToString();
+    }
+
+    public void OnDoubleRewardedButtonClicked()
+    {
+        // rewardAdID — строка ID, которую вы задаёте в инспекторе (например, "AddCoin")
+        YG2.RewardedAdvShow(rewardAdID, () =>
+        {
+            // Пользователь досмотрел рекламу — выдаём награду
+            YG2.saves.coins += lastSessionCoinCount;
+            YG2.SaveProgress();
+
+            // Обновляем UI после игры и в меню
+            UpdateAfterGameUI();
+            UpdateMenuUI();
+        });
     }
 }
