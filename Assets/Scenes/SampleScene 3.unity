@@ -607,7 +607,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.2
+  m_fontSize: 82.6
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1558,10 +1558,10 @@ RectTransform:
   - {fileID: 1062578726}
   m_Father: {fileID: 536648499}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000005126, y: 127.2}
-  m_SizeDelta: {x: 306.33, y: 51.2766}
+  m_AnchorMin: {x: 0.120222226, y: 0.64083755}
+  m_AnchorMax: {x: 0.86651856, y: 0.702}
+  m_AnchoredPosition: {x: -0.9248047, y: 0.5}
+  m_SizeDelta: {x: -0.9932251, y: 0.7805176}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &164515956
 MonoBehaviour:
@@ -2512,7 +2512,7 @@ MonoBehaviour:
   yawSpeed: 300
   returnYawSpeed: 120
   enableSwipe: 1
-  swipeThresholdFraction: 0.2
+  swipeThresholdFraction: 0.051
   animator: {fileID: 1341634884}
   jumpTrigger: jump
   dashTrigger: dash
@@ -2703,7 +2703,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32.8
+  m_fontSize: 101.1
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3070,7 +3070,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 84.35
+  m_fontSize: 150.85
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8350,7 +8350,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33.05
+  m_fontSize: 72
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -9595,7 +9595,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30.85
+  m_fontSize: 82.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -12114,6 +12114,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: road
       objectReference: {fileID: 0}
+    - target: {fileID: 8623691100696269798, guid: b40f3f4dd52734903a55367cbb722c73, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13427,7 +13431,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36.05
+  m_fontSize: 99.75
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -14003,7 +14007,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34.9
+  m_fontSize: 100.95
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -15543,7 +15547,7 @@ MonoBehaviour:
     actionButtonText: {fileID: 1706766386}
     isPurchased: 1
   - itemName: "\u0436\u0435\u043B\u0435\u0437\u043E"
-    price: 100
+    price: 1000
     material: {fileID: 2100000, guid: 76054e671c25e4a828a7d81677b9c18f, type: 2}
     itemIcon: {fileID: 1870279049}
     itemIconTexture: {fileID: 2800000, guid: dafe5df1be1254fef8db21843f0c7563, type: 3}
@@ -15552,7 +15556,7 @@ MonoBehaviour:
     actionButtonText: {fileID: 1423376101}
     isPurchased: 0
   - itemName: "\u0437\u043E\u043B\u043E\u0442\u043E"
-    price: 1000
+    price: 10000
     material: {fileID: 2100000, guid: ca972c520c5654bb4b25fadfe3fe3e7b, type: 2}
     itemIcon: {fileID: 374382390}
     itemIconTexture: {fileID: 2800000, guid: 29c87a0635b6e47a2a99b5e2bc79db68, type: 3}

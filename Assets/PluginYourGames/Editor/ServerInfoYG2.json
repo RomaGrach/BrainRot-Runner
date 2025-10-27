@@ -8,7 +8,7 @@
     "modules": [
         {
             "name": "PluginYG2",
-            "version": "2.0041",
+            "version": "2.0042",
             "download": "https://max-games.ru/public/pluginYG2/other/PluginYG2.unitypackage",
             "doc": "https://max-games.ru/plugin-yg/doc/"
         },
@@ -172,6 +172,13 @@
             "version": "1.0",
             "download": "https://max-games.ru/public/pluginYG2/modules/Clipboard.unitypackage",
             "doc": "https://max-games.ru/other/"
+        },
+        {
+            "name": "WelwiseGames",
+            "version": "1.000",
+            "download": "https://max-games.ru/public/pluginYG2/platforms/WelwiseGames.unitypackage",
+            "doc": "https://max-games.ru/welwise/",
+            "platform": true
         }
     ]
 }

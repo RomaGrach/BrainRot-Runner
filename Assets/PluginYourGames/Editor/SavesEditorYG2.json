@@ -1,8 +1,9 @@
 {
-    "coins": 34,
-    "MaxScore": 584,
+    "coins": 0,
+    "MaxScore": 0,
     "skins": [
         true,
+        false,
         false,
         false
     ],
@@ -11,7 +12,7 @@
         10.0
     ],
     "itemsDurPrise": [
-        100
+        400
     ],
     "intExample": 5,
     "strExample": "Hello!",
@@ -21,5 +22,5 @@
         false,
         false
     ],
-    "idSave": 14
+    "idSave": 55
 }
